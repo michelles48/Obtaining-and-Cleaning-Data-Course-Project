@@ -1,3 +1,13 @@
+features <- read.table("features.txt", col.names = c("n","functions"))
+activities <- read.table("activity_labels.txt", col.names = c("code", "activity"))
+subject_test <- read.table("test/subject_test.txt", col.names = "subject")
+x_test <- read.table("X_test.txt", col.names = features$functions)
+y_test <- read.table("y_test.txt", col.names = "code")
+subject_train <- read.table("subject_train.txt", col.names = "subject")
+x_train <- read.table("X_train.txt", col.names = features$functions)
+y_train <- read.table("y_train.txt", col.names = "code")
+
+
 X <- rbind(x_train, x_test)
 Y <- rbind(y_train, y_test)
 Subject <- rbind(subject_train, subject_test)
